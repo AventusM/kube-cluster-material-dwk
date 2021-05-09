@@ -1,0 +1,16 @@
+# https://docs.fluxcd.io/projects/helm-operator/en/1.0.0-rc9/references/helmrelease-custom-resource.html
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: my-nats
+  namespace: flux-system
+spec:
+  timeout: 300
+  resetValues: false
+  wait: false
+  forceUpgrade: false
+  chart:
+    repository: https://nats-io.github.io/k8s/helm/charts/ # repo url from part 4.2
+    name: my-nats
+  values:
+    replicas: 1

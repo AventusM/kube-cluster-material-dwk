@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: aventusm-dwk
+  namespace: flux-system
+spec:
+  interval: 1m # Keep fetching all the time
+  url: "https://github.com/AventusM/gitops-project"
+  ref:
+    branch: main
